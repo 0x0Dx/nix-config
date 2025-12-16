@@ -27,7 +27,7 @@
             home-manager.backupFileExtension = "backup";
               
             home-manager.extraSpecialArgs = inputs;
-            home-manager.users.oxod = import ./home.nix; 
+            home-manager.users.oxod = import ./home; 
           }
         ];
       };
