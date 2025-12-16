@@ -16,6 +16,4 @@
   programs.steam.platformOptimizations.enable = true;
 
   programs.gamemode.enable = true;
-
-  networking.mihoyo-telemetry.block = true;
 }

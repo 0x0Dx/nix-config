@@ -16,8 +16,6 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    helix.url = "github:helix-editor/helix/master";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gaming, ... }: {
@@ -26,7 +24,7 @@
         system = "x86_64-linux";
           
         specialArgs = {
-          inherit nixpkgs-stable;
+          inherit nixpkgs-stable nix-gaming;
         };
         modules = [
           ./hosts/404NotFound

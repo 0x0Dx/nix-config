@@ -26,6 +26,11 @@
     open = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    vulkan-loader
+  ];
+
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
