@@ -1,12 +1,9 @@
-{ config, pkgs, home-manager, nur, ... }@args: {
+{ config, pkgs, home-manager, ... }@args: {
   imports = [
-    nur.nixosModules.nur
-
     ./hardware-configuration.nix
 
     ../../modules/fhs-fonts.nix
     ../../modules/hyprland.nix
-    ../../modules/nur-packages.nix
     ../../modules/system.nix
     ../../modules/user_groups.nix
     ../../modules/gaming.nix
