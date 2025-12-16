@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ../../modules/system.nix
-    ../../modules/i3.nix
+    ../../modules/hyprland.nix
     ../../modules/fcitx5
     ./hardware-configuration.nix
   ];

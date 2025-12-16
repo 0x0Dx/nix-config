@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
-    ./i3
+    ./hyprland
     ./programs
     ./rofi
     ./shell

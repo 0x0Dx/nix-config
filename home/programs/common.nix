@@ -72,12 +72,6 @@
     # Rust
     rustup
 
-    # nodejs
-    nodejs
-    nodePackages.npm
-    nodePackages.pnpm
-    yarn
-
     # desktop
     telegram-desktop
     discord
@@ -94,7 +88,7 @@
     };
 
     btop.enable = true;
-    exa.enable = true;
+    eza.enable = true;
     jq.enable = true;
     ssh.enable = true;
     aria2.enable = true;
