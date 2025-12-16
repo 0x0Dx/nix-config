@@ -57,13 +57,50 @@
     wget
     curl
     git
+    git-lfs
+    ethtool
+    iperf3
+    nmap
+    socat
     sysstat
     lm_sensors
+    findutils
+    file
+    which
+    tree
+    gnused
+    gnutar
+    gawk
+    p7zip
+    xz
+    zstd
+    cifs-utils
+    (python3.withPackages(ps: with ps; [
+      ipython
+      pandas
+      requests
+      pyquery
+    ]))
+    conda
+    libva-utils
+    nvtop
+    vdpauinfo
+    vulkan-tools
+    vulkan-loader
+    glxinfo
+    glmark2
     scrot
     fastfetch
     xfce.thunar
     nnn
+    xdg-users-dirs
+    minicom
+    remmina
+    freerdp
+    devenv.packages."${pkgs.system}".devenv
   ];
+
+  services.flatpak.enable = true;
 
   services.pulseaudio.enable = false;
   services.power-profiles-daemon = {
@@ -84,12 +121,12 @@
       jack.enable = true;
     };
 
-    udev.packages = with pkgs; [ gnome-settings-daemon ];
+    udev.packages = with pkgs; [ 
+      gnome-settings-daemon
+      platformio
+      android-udev-rules
+    ];
   };
-
-  users.users.oxod = {
-    isNormalUser = true;
-    description = "OxOD";
-    extraGroups = [ "users" "networkmanager" "wheel" "docker" "wireshark" "adbusers" ];
-  };
+  
+  programs.adb.enable = true;
 }

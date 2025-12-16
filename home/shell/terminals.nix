@@ -17,7 +17,7 @@ in
         normal.family = font;
         bold.family = font;
         italic.family = font;
-        size = 8;
+        size = 11;
       };
     };
   };

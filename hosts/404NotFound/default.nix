@@ -1,12 +1,18 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, home-manager, nur, ... }: {
   imports = [
-    ../../modules/system.nix
-    ../../modules/hyprland.nix
-    ../../modules/gaming.nix
-    ../../modules/fcitx5
+    nur.nixosModules.nur
 
     ./hardware-configuration.nix
+
+    ../../modules/fhs-fonts.nix
+    ../../modules/hyprland.nix
+    ../../modules/nur-packages.nix
+    ../../modules/system.nix
+    ../../modules/user_groups.nix
+    ../../modules/gaming.nix
   ];
+
+  nixpkgs.overlays = import ../../overlays args;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -25,11 +31,6 @@
     powerManagement.enable = true;
     open = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    vulkan-tools
-    vulkan-loader
-  ];
 
   hardware.opengl = {
     enable = true;
