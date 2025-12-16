@@ -24,11 +24,7 @@
     powerManagement.enable = true;
     open = true;
   };
-  hardware.graphics = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  hardware.graphics.enable = true;
 
   virtualisation.docker = {
     enable = true;
