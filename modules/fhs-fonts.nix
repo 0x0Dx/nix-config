@@ -10,6 +10,7 @@
             name = "system-fonts";
             paths = config.fonts.fonts;
             pathsToLink = [ "/share/fonts" ];
+            ignoreCollisions = true;
         };
     in {
         "/usr/share/icons" = mkRoSymBind (config.system.path+"/share/icons");
