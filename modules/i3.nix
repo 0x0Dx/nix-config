@@ -18,7 +18,6 @@
         i3lock
         xautolock
         i3status
-        i3-gaps
         picom
         feh
         acpi

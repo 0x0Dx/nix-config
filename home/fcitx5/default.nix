@@ -11,7 +11,7 @@
     in
       with pkgs; [
         fcitx5-rime
-        fcitx5-configtool
+        qt6Packages.fcitx5-configtool
       ];
   };
 }
