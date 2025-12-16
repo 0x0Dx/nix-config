@@ -42,7 +42,7 @@
     mako
     yad
     mpd
-    mpc-cli
+    mpc
     ncmpcpp
     networkmanagerapplet
   ];
