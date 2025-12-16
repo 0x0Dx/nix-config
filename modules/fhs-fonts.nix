@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
     system.fsPackages = [ pkgs.bindfs ];
     fileSystems = let
-        mkRoSymBind = path; {
+        mkRoSymBind = path: {
             device = path;
             fsType = "fuse.bindfs";
             options = [ "ro" "resolve-symlinks" "x-gvfs-hide" ];
