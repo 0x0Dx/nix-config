@@ -86,7 +86,7 @@
     vdpauinfo
     vulkan-tools
     vulkan-loader
-    glxinfo
+    mesa-demos
     glmark2
     scrot
     fastfetch
