@@ -20,7 +20,7 @@
     helix.url = "github:helix-editor/helix/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gamging, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gaming, ... }: {
     nixosConfigurations = {
       "404NotFound" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
