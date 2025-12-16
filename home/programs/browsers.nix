@@ -5,8 +5,7 @@
   };
 in {
   home.packages = with pkgs-stable; [
-    firefox-wayland
-    google-chrome
+    firefox
   ];
 
   programs.vscode = {

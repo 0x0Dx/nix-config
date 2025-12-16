@@ -3,15 +3,14 @@
     ../../modules/system.nix
     ../../modules/i3.nix
     ../../modules/fcitx5
-    
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   boot.loader = {
     systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-    };
+    efi.canTouchEfiVariables = true;
   };
 
   networking.hostName = "404NotFound";
@@ -24,13 +23,13 @@
     powerManagement.enable = true;
     open = true;
   };
-  hardware.graphics.enable = true;
 
-  virtualisation.docker = {
+  hardware.opengl = {
     enable = true;
-    enableNvidia = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+    ];
   };
 
   system.stateVersion = "25.11";
 }
-
