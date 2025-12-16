@@ -17,11 +17,7 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland = {
-      enable = true;
-      hidpi = true;
-    };
-    nvidiaPatches = true;
+    xwayland.enable = true;
   };
   programs.light.enable = true;
 
