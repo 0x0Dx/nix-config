@@ -31,11 +31,6 @@
     nodePackages.npm
     nodePackages.pnpm
     yarn
-
-    # db related
-    dbeaver
-    mycli
-    pgcli
   ];
 
   programs = {
