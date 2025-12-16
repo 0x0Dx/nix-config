@@ -1,8 +1,8 @@
-{ pkgs, config, username, ... }: {
+{ pkgs, config, ... }: {
   programs = {
     firefox = {
       enable = true;
-      profiles.${username} = { };
+      profiles.oxod = { };
     };
   };
 }
