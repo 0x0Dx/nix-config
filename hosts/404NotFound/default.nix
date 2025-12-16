@@ -21,6 +21,7 @@
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
+    open = true;
   };
 
   system.stateVersion = "25.11";
