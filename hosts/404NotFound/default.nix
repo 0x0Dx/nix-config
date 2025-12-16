@@ -2,7 +2,9 @@
   imports = [
     ../../modules/system.nix
     ../../modules/hyprland.nix
+    ../../modules/gaming.nix
     ../../modules/fcitx5
+
     ./hardware-configuration.nix
   ];
 

@@ -12,10 +12,15 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     helix.url = "github:helix-editor/helix/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gamging, ... }: {
     nixosConfigurations = {
       "404NotFound" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
