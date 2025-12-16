@@ -95,7 +95,7 @@
     minicom
     remmina
     freerdp
-    devenv.packages."${pkgs.system}".devenv
+    devenv
   ];
 
   services.flatpak.enable = true;
