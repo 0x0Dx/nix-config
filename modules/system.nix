@@ -83,7 +83,6 @@
     ]))
     conda
     libva-utils
-    nvtop
     vdpauinfo
     vulkan-tools
     vulkan-loader
