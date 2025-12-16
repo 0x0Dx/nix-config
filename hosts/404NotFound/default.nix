@@ -16,6 +16,8 @@
   networking.hostName = "404NotFound";
   networking.networkmanager.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   services.xserver.videoDrivers = ["nvidia"];
   hardware.opengl.enable = true;
   hardware.nvidia = {
