@@ -92,7 +92,6 @@
     fastfetch
     xfce.thunar
     nnn
-    xdg-users-dirs
     minicom
     remmina
     freerdp
