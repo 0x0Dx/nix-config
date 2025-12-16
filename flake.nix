@@ -1,37 +1,36 @@
 {
   description = "0x0D's NixOS configuration";
 
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     helix.url = "github:helix-editor/helix/master";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-vscode-extensions, ... }: {
     nixosConfigurations = {
-      "404NotFound" = let
-         username = "oxod";
-         specialArgs = {inherit username;};
-       in
-         nixpkgs.lib.nixosSystem {
-           inherit specialArgs;
-           system = "x86_64-linux";
+      "404NotFound" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
            
-           modules = [
-             ./hosts/404NotFound
-             ./users/${username}/nixos.nix
+        modules = [
+          ./hosts/404NotFound
              
-             home-manager.nixosModules.home-manager {
-               home-manager.useGlobalPkgs = true;
-               home-manager.useUserPackages = true;
-               home-manager.backupFileExtension = "backup";
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
               
-               home-manager.extraSpecialArgs = inputs // specialArgs;
-               home-manager.users.${username} = import ./users/${username}/home.nix; 
-             }
-           ];
-         };
+            home-manager.extraSpecialArgs = inputs;
+            home-manager.users.oxod = import ./home.nix; 
+          }
+        ];
+      };
     };
   };
 }

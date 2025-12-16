@@ -16,6 +16,13 @@
   networking.hostName = "404NotFound";
   networking.networkmanager.enable = true;
 
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.opengl.enable = true;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+  };
+
   system.stateVersion = "25.11";
 }
 

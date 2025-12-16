@@ -1,30 +1,4 @@
-{ pkgs, lib, username, ... }: {
-  users.users.${username} = {
-    isNormalUser = true;
-    description = username;
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-  nix.settings.trusted-users = [ username ];
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = [
-      "https://cache.nixos.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
-    builders-use-substitutes = true;
-  };
-
-  nix.gc = {
-    automatic = lib.mkDefault true;
-    dates = lib.mkDefault "weekly";
-    options = lib.mkDefault "--delete-older-than 7d";
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
+{ config, pkgs, ... }: {
   time.timeZone = "Europe/Amsterdam";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -91,6 +65,7 @@
     nnn
   ];
 
+  sound.enable = true;
   services.pulseaudio.enable = false;
   services.power-profiles-daemon = {
     enable = true;
@@ -111,5 +86,11 @@
     };
 
     udev.packages = with pkgs; [ gnome-settings-daemon ];
+  };
+
+  users.users.oxod = {
+    isNormalUser = true;
+    description = "OxOD";
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 }

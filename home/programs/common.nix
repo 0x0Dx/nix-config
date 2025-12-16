@@ -1,40 +1,39 @@
-{ lib, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
-    # Archives
+    # archives
     zip
     unzip
     p7zip
 
-    # Utils
+    # utils
     ripgrep
     yq-go
     htop
 
-    # Misc
+    # misc
     libnotify
     wineWowPackages.wayland
     xdg-utils
     graphviz
 
-    # Productivity
+    # productivity
     obsidian
 
     # IDE
     insomnia
-    vscode
 
-    # Cloud native
+    # cloud native
     docker-compose
     kubectl
 
-    # Development
+    # development
     nodejs
     nodePackages.npm
     nodePackages.pnpm
     yarn
 
-    # DB Related
-    dbeaver-bin
+    # db related
+    dbeaver
     mycli
     pgcli
   ];
@@ -53,7 +52,7 @@
     };
 
     btop.enable = true;
-    eza.enable = true;
+    exa.enable = true;
     jq.enable = true;
     ssh.enable = true;
     aria2.enable = true;
@@ -61,7 +60,7 @@
     skim = {
       enable = true;
       enableZshIntegration = true;
-      defaultCommand = "rg --files -hidden";
+      defaultCommand = "rg --files --hidden";
       changeDirWidgetOptions = [
         "--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
         "--exact"
