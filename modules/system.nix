@@ -122,7 +122,6 @@
     udev.packages = with pkgs; [ 
       gnome-settings-daemon
       platformio
-      android-udev-rules
     ];
   };
   
