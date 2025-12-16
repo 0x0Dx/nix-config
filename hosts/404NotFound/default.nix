@@ -2,6 +2,7 @@
   imports = [
     ../../modules/system.nix
     ../../modules/i3.nix
+    ../../modules/fcitx5
     
     ./hardware-configuration.nix
   ];
@@ -16,14 +17,22 @@
   networking.hostName = "404NotFound";
   networking.networkmanager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.opengl.enable = true;
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
+    powerManagement.enable = true;
     open = true;
+  };
+  hardware.graphics = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
   };
 
   system.stateVersion = "25.11";

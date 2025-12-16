@@ -7,17 +7,22 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    helix.url = "github:helix-editor/helix/master";
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    helix.url = "github:helix-editor/helix/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nix-vscode-extensions, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }: {
     nixosConfigurations = {
       "404NotFound" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-           
+          
+        specialArgs = {
+          inherit nixpkgs-stable;
+        };
         modules = [
           ./hosts/404NotFound
              

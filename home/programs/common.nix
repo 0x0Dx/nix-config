@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -10,35 +10,83 @@
     yq-go
     htop
 
+    ## networking tools
+    wireshark
+    wireguard-tools 
+
     # misc
     libnotify
     wineWowPackages.wayland
     xdg-utils
-    graphviz
 
     # productivity
     obsidian
+    hugo
 
     # IDE
     insomnia
+    jetbrains.pycharm-community
+    # jetbrains.idea-community
 
     # cloud native
     docker-compose
     kubectl
+    kubernetes-helm
+    terraform
+    pulumi
 
-    # development
+    # cloud provider
+    awscli
+
+    # C
+    clang-tools
+    clang-analyzer
+    lldb
+    gnumake
+    cmake
+    autoconf
+    automake
+    bison
+    cppcheck
+    fakeroot
+    flex
+    gettext
+    groff
+    libtool
+    m4
+    patch
+    pkgconf
+    texinfo
+    binutils
+
+    # Golang
+    delve
+    go
+    go-outline
+    go-tools
+    go2nix
+    gomodifytags
+    gopls
+    gotests
+    impl
+
+    # Rust
+    rustup
+
+    # nodejs
     nodejs
     nodePackages.npm
     nodePackages.pnpm
     yarn
+
+    # desktop
+    tdesktop
+    discord
   ];
 
   programs = {
     tmux = {
       enable = true;
-      clock24 = true;
-      keyMode = "vi";
-      extraConfig = "mouse on";
     };
 
     bat = {
@@ -54,17 +102,16 @@
 
     skim = {
       enable = true;
-      enableZshIntegration = true;
-      defaultCommand = "rg --files --hidden";
-      changeDirWidgetOptions = [
-        "--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
-        "--exact"
-      ];
+      enableBashIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
   };
 
   services = {
-    syncthing.enable = true;
     udiskie.enable = true;
   };
 }

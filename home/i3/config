@@ -71,13 +71,12 @@ bindcode $mod+Shift+79 	 move container to workspace  $ws7
 bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
-bindsym $mod+r mode "resize"
 
 # keybindings for different actions
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
-bindsym $mod+l exec ~/.config/i3/scripts/blur
+bindsym $mod+l exec ~/.config/i3/scripts/lock
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym XF86MonBrightnessUp exec xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
@@ -126,7 +125,7 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 # configuration for workspace behaviour
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:" 
+set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5"
 set $ws6 "6"
@@ -150,8 +149,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/wallpaper.png
 exec --no-startup-id xset s 480 dpms 600 600 600
 exec --no-startup-id /usr/bin/dunst
-exec --no-startup-id blueberry-tray
-exec --no-startup-id nm-applet
 
 # floating rules
 for_window [class="Yad" instance="yad"] floating enable
@@ -179,33 +176,32 @@ set $grey #b0b5bd
 set $mediumgrey #8b8b8b
 set $yellowbrown #e1b700
 
-# Window colors
-client.focused $lightblue $darkblue $white $mediumgrey $mediumgrey
+# define colors for windows
+client.focused $lightblue	$darkblue	$white $mediumgrey $mediumgrey
 client.unfocused $darkblue $darkblue $grey $darkgrey $darkgrey
-client.focused_inactive $darkblue $darkblue $grey $black $black
-client.urgent $urgentred $urgentred $white $yellowbrown $yellowbrown
+client.focused_inactive $darkblue	$darkblue	$grey $black $black
+client.urgent $urgentred $urgentred $white $yellowbrown	$yellowbrown
 
 # bar settings
 bar {
-  font pango: Noto Sans Regular 10
-  status_command i3blocks -c ~/.config/i3/i3blocks.conf
-  position bottom
-  tray_padding 0
+	font pango: Noto Sans Regular 10
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position bottom
+	tray_padding 0
   strip_workspace_numbers yes
-  colors {
-    separator $purple
-    background $darkgrey
-    statusline $white
-    focused_workspace $mediumgrey $grey	$darkgrey $purple
-    active_workspace $lightblue  $mediumgrey $darkgrey $purple
-    inactive_workspace $darkgrey  $darkgrey $grey $purple
-    urgent_workspace $urgentred $urgentred $white $purple
-  }
+	colors {
+		separator $purple
+		background $darkgrey
+		statusline $white
+		focused_workspace	$mediumgrey	$grey $darkgrey	$purple
+		active_workspace $lightblue	$mediumgrey	$darkgrey	$purple
+		inactive_workspace $darkgrey $darkgrey $grey $purple
+		urgent_workspace $urgentred $urgentred $white $purple
+	}
 }
 
 # Application menu handled by rofi
 bindsym $mod+d exec rofi -modi drun -show drun \
-    -config ~/.config/rofi/rofidmenu.rasi
+		-config ~/.config/rofi/rofidmenu.rasi
 bindsym $mod+t exec rofi -show window \
-    -config ~/.config/rofi/rofidmenu.rasi
-
+		-config ~/.config/rofi/rofidmenu.rasi

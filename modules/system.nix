@@ -90,6 +90,6 @@
   users.users.oxod = {
     isNormalUser = true;
     description = "OxOD";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "users" "networkmanager" "wheel" "docker" "wireshark" "adbusers" ];
   };
 }

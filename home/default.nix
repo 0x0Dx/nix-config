@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   imports = [
-    ./fcitx5
     ./i3
     ./programs
     ./rofi

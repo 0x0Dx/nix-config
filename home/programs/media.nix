@@ -4,8 +4,23 @@
     pavucontrol
     playerctl
     pulsemixer
+
+    ffmpeg-full
+
     # images
+    viu
     imv
+    imagemagick
+    graphviz
+
+    # creative
+    blender
+    gimp
+    inkscape 
+    krita
+
+    # 3d printing, eletrical engineering
+    kicad
   ];
 
   programs = {
