@@ -4,7 +4,7 @@
     nix-gaming.nixosModules.platformOptimizations
   ];
 
-  config = mkIf cfg.enable {
+  config = {
     programs.steam = {
       enable = true;
       package = pkgs.steam;
