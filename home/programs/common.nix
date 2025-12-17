@@ -75,6 +75,12 @@
     # desktop
     telegram-desktop
     discord
+
+    # LibreOffice
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_US
+    hunspellDicts.nl_NL
   ];
 
   programs = {
