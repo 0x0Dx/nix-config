@@ -3,8 +3,6 @@
     ../common
 
     ./hyprland
-
-    ./fcitx5
     ./desktop
 
     ./common/alacritty

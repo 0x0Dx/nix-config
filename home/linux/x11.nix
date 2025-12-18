@@ -3,8 +3,6 @@
     ../common
 
     ./x11
-
-    ./fcitx5
     ./desktop
 
     ./common/alacritty
