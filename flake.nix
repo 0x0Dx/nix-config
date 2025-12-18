@@ -18,30 +18,33 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gaming, ... }: {
-    nixosConfigurations = {
-      "404NotFound" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-          
-        specialArgs = {
-          pkgs-stable = import inputs.nixpkgs-stable {
-            system = system; 
-            config.allowUnfree = true;
-          };
-        } // inputs;
-        modules = [
-          ./hosts/404NotFound
-             
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-              
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.oxod = import ./home/wayland.nix;
-          }
-        ];
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-gaming, ... }:
+  let
+    system = "x86_64-linux";
+
+    specialArgs = {
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
       };
+    } // inputs;
+
+  in {
+    nixosConfigurations."404NotFound" = nixpkgs.lib.nixosSystem {
+      inherit system specialArgs;
+
+      modules = [
+        ./hosts/404NotFound
+
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+
+          home-manager.extraSpecialArgs = specialArgs;
+          home-manager.users.oxod = import ./home/linux/wayland.nix;
+        }
+      ];
     };
   };
 }

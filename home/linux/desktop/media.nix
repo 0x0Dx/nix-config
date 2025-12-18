@@ -4,11 +4,10 @@
     playerctl
     pulsemixer
     imv 
-    nvtop
     libva-utils
     vdpauinfo
     vulkan-tools
-    glxinfo
+    mesa-demos
   ];
 
   programs = {

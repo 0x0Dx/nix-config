@@ -1,6 +1,6 @@
-{config, pkgs, nil, ...}: {
+{config, pkgs, ...}: {
   home.packages = with pkgs; [
-    nil.packages."${pkgs.system}".default
+    nil
     insomnia
     conda
   ];

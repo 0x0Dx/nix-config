@@ -34,18 +34,15 @@
       material-design-icons
       font-awesome
       noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji 
-      noto-fonts-extra 
-      source-sans 
-      source-serif 
-      source-han-sans  
-      source-han-serif 
-      (nerdfonts.override { fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-        "Iosevka"
-      ];})
+      noto-fonts-color-emoji
+      source-sans
+      source-serif
+      source-han-sans
+      source-han-serif
+
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.iosevka
     ];
 
     fontconfig.defaultFonts = {
@@ -70,8 +67,6 @@
     openFirewall = true;
   };
 
-  programs.ssh.startAgent = true;
-
   environment.systemPackages = with pkgs; [
     neovim 
     wget
@@ -80,7 +75,7 @@
     git-lfs 
     devenv
     (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
-    pkgs.buildFHSUserEnv (base // {
+    pkgs.pkgs.buildFHSEnv (base // {
       name = "fhs";
       targetPkgs = pkgs: (base.targetPkgs pkgs) ++ [pkgs.pkg-config]; 
       profile = "export FHS=1"; 
@@ -99,7 +94,6 @@
     jack.enable = true;
   };
   security.rtkit.enable = true;
-  sound.enable = false;
   hardware.pulseaudio.enable = false;
 
   hardware.bluetooth.enable = true;
@@ -120,7 +114,7 @@
     geoclue2.enable = true;
 
     udev.packages = with pkgs; [ 
-      gnome.gnome-settings-daemon
+      gnome-settings-daemon
       platformio 
     ];
   };

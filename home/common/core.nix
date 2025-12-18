@@ -9,7 +9,7 @@
     ripgrep
     jq
     yq-go
-    exa
+    eza
     fzf
     mtr
     iperf3

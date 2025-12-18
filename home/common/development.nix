@@ -22,13 +22,12 @@
     go
     go-outline
     go-tools
-    go2nix
     gomodifytags
     gopls
     gotests
     impl
     rustup
-    (python310.withPackages(ps: with ps; [
+    (python311.withPackages(ps: with ps; [
       ipython
       pandas
       requests
