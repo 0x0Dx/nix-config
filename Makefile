@@ -11,4 +11,5 @@ history:
 	sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 
 gc:
-	sudo nix-collect-garbage --delete-older-than 14d
+	sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
+	sudo nix store gc --debug

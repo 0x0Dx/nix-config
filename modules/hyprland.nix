@@ -1,16 +1,18 @@
 { pkgs, ... }: {
-  environment.pathsToLink = ["/libexec"];
+  environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
+
     desktopManager = {
       xterm.enable = false;
     };
+
     displayManager = {
       defaultSession = "hyprland";
       lightdm.enable = false;
       gdm = {
         enable = true;
-	      wayland = true;
+        wayland = true;
       };
     };
   };
@@ -45,16 +47,6 @@
     mpc
     ncmpcpp
     networkmanagerapplet
+    xfce.thunar
   ];
-
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-  };
-
-  services.upower.enable = true;
 }

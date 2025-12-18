@@ -24,8 +24,11 @@
         system = "x86_64-linux";
           
         specialArgs = {
-          inherit nixpkgs-stable nix-gaming;
-        };
+          pkgs-stable = import inputs.nixpkgs-stable {
+            system = system; 
+            config.allowUnfree = true;
+          };
+        } // inputs;
         modules = [
           ./hosts/404NotFound
              
@@ -34,8 +37,8 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
               
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users.oxod = import ./home; 
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.oxod = import ./home/wayland.nix;
           }
         ];
       };

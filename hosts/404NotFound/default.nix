@@ -4,12 +4,23 @@
 
     ../../modules/fhs-fonts.nix
     ../../modules/hyprland.nix
-    ../../modules/system.nix
+    ../../modules/gui-apps.nix
+    ../../modules/core-desktop.nix
     ../../modules/user_groups.nix
     ../../modules/gaming.nix
   ];
 
   nixpkgs.overlays = import ../../overlays args;
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.supportedFilesystems = [ 
+    "ext4"
+    "btrfs"
+    "xfs"
+    "ntfs"
+    "fat" "vfat" "exfat"
+    "cifs"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 

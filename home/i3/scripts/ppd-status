@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-current_profile=$(powerprofilesctl get)
-echo "$current_profile"

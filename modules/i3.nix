@@ -1,14 +1,17 @@
 { pkgs, ... }: {
-  environment.pathsToLink = ["/libexec"];
+  environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
+
     desktopManager = {
       xterm.enable = false;
     };
+
     displayManager = {
       lightdm.enable = false;
       gdm.enable = true;
     };
+
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
@@ -26,11 +29,14 @@
         xbindkeys
         xorg.xbacklight
         xorg.xdpyinfo
+        scrot
         sysstat
-      ];
+        xfce.thunar
+     ];
     };
-    xkb.layout = "us";
-    xkb.variant = "";
+
+    layout = "us";
+    xkbVariant = "";
   };
 
   programs.thunar.plugins = with pkgs.xfce; [
