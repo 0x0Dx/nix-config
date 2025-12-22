@@ -10,6 +10,8 @@
     ../../modules/gaming.nix
   ];
 
+  nix.settings.trusted-users = [ "root" "oxod" ];
+
   nixpkgs.overlays = import ../../overlays args;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];

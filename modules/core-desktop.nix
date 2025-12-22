@@ -74,6 +74,7 @@
     git 
     git-lfs 
     devenv
+    godot
     (let base = pkgs.appimageTools.defaultFhsEnvArgs; in 
     pkgs.pkgs.buildFHSEnv (base // {
       name = "fhs";

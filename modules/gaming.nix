@@ -12,6 +12,10 @@
     extest.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    lutris
+  ];
+
   services.pipewire.lowLatency.enable = true;
   programs.steam.platformOptimizations.enable = true;
 
