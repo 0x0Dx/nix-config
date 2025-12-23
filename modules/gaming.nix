@@ -13,7 +13,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lutris
+    heroic
   ];
 
   services.pipewire.lowLatency.enable = true;
