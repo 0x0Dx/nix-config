@@ -6,7 +6,7 @@
   inactive-opacity = config.theme.inactive-opacity;
   rounding = config.theme.rounding;
   blur = config.theme.blur;
-  keyboardLayout = config.keyboardLayout;
+  keyboardLayout = config.var.keyboardLayout;
   background = "rgb("+config.lib.stylix.colors.base00+")";
 in {
   imports = [
