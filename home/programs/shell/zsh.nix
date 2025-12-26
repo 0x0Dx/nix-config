@@ -3,12 +3,6 @@
 in {
   home.packages = with pkgs; [bat ripgrep tldr sesh];
 
-  home.sessionVariables = {
-    XDG_DATA_DIRS = ''
-      ${builtins.getEnv "XDG_DATA_DIRS"}:/var/lib/flatpak/exports/share:${config.home.homeDirectory}/.local/share/flatpak/exports/share
-    '';
-  };
-
   home.sessionPath = ["$HOME/go/bin"];
 
   programs.zsh = {
