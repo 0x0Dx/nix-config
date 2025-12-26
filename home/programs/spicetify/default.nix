@@ -9,7 +9,7 @@ in {
 
   programs.spicetify = {
     enable = true;
-    theme = lib.mkForce spicePkgs.themes.dribbblish;
+    theme = lib.mkForce spicePkgs.themes.catppuccin;
 
     colorScheme = "custom";
 
