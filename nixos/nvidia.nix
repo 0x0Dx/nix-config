@@ -31,7 +31,6 @@ in {
 
   hardware = {
     nvidia = {
-      open = false;
       nvidiaSettings = true;
       modesetting.enable = true;
       package = nvidiaDriverChannel;
