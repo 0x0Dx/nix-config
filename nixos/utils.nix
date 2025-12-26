@@ -1,4 +1,5 @@
 { pkgs, config, ... }: let 
+  username = config.var.username;
   hostname = config.var.hostname;
   keyboardLayout = config.var.keyboardLayout;
   configDir = config.var.configDir;
