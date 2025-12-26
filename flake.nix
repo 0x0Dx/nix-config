@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.url = "github:0x0Dx/nixos-hardware";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     stylix.url = "github:nix-community/stylix";
     vicinae.url = "github:vicinaehq/vicinae";
@@ -28,7 +28,7 @@
               inherit inputs;
             };
           } 
-          # inputs.nixos-hardware.nixosModules.notyet
+          inputs.nixos-hardware.nixosModules.asus-fa506ncr
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           ./hosts/toasty/configuration.nix
