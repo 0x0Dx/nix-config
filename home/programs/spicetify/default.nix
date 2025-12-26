@@ -11,25 +11,17 @@ in {
     enable = true;
     theme = lib.mkForce spicePkgs.themes.catppuccin;
 
-    colorScheme = "custom";
-
-    customColorScheme = {
-      button = accent;
-      button-active = accent;
-      tab-active = accent;
-      player = background;
-      main = background;
-      sidebar = background;
-    };
-
     enabledExtensions = with spicePkgs.extensions; [
       playlistIcons
       lastfm
       historyShortcut
+      history
+      autoVolume
       hidePodcasts
       adblock
       fullAppDisplay
       keyboardShortcut
+      beautifulLyrics
     ];
   };
 }
