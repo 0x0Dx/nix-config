@@ -60,15 +60,7 @@ in {
   services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
-    flatpak = {
-      enable = true;
-      remotes = [
-        {
-          name = "flathub";
-          location = "https://flathub.org/repo/flathub.flatpakrepo";
-        }
-      ];
-    };
+    flatpak.enable = true;
     dbus = {
       enable = true;
       implementation = "broker";
