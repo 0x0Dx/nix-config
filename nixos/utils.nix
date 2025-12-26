@@ -60,10 +60,19 @@ in {
   services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
+    flatpak = {
+      enable = true;
+      remotes = [
+        {
+          name = "flathub";
+          location = "https://flathub.org/repo/flathub.flatpakrepo";
+        }
+      ];
+    };
     dbus = {
       enable = true;
       implementation = "broker";
-      packages = with pkgs; [gcr gnome-settings-daemon]; 
+      packages = with pkgs; [gcr gnome-settings-daemon flatpak]; 
     };
     gvfs.enable = true;
     upower.enable = true;
@@ -104,7 +113,10 @@ in {
       common.default = ["gtk"];
       hyprland.default = ["gtk" "hyprland"];
     };
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
   };
 
   security = {
