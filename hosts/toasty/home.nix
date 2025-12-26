@@ -72,7 +72,7 @@
       btop
       fastfetch
       flatpak
-      gnome.gnome-software
+      gnome-software
 
       # Just cool
       peaclock
