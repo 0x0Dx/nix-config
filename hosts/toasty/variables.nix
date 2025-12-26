@@ -26,7 +26,7 @@
 
   options = {
     var = lib.mkOption {
-      type = lib.type.attrs;
+      type = lib.types.attrs;
       default = {};
     };
   };

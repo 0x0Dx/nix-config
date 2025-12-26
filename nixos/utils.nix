@@ -7,7 +7,7 @@
   extraLocale = config.var.extraLocale;
   autoUpgrade = config.var.autoUpgrade;
 in {
-  networking.hostname = hostname;
+  networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
@@ -109,7 +109,7 @@ in {
 
   security = {
     pam.services.hyprlock.text = "auth include login";
-    rkit.enable = true;
+    rtkit.enable = true;
     sudo.wheelNeedsPassword = true;
   };
 }

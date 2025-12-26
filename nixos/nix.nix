@@ -32,7 +32,7 @@ in {
     };
     gc = {
       automatic = autoGarbageCollector;
-      presistent = true;
+      persistent = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };

@@ -15,16 +15,16 @@
 
     ../../home/scripts
 
-    ../../home/system/hyprland
-    ../../home/system/hyprlock
-    ../../home/system/hyprpanel
-    ../../home/system/hyprpaper
-    ../../home/system/zathura
-    ../../home/system/mime
-    ../../home/system/udiskie
-    ../../home/system/vicinae
-    ../../home/system/wofi
-    ../../home/system/hypridle
+    ../../home/systems/hyprland
+    ../../home/systems/hyprlock
+    ../../home/systems/hyprpanel
+    ../../home/systems/hyprpaper
+    ../../home/systems/zathura
+    ../../home/systems/mime
+    ../../home/systems/udiskie
+    ../../home/systems/vicinae
+    ../../home/systems/wofi
+    ../../home/systems/hypridle
   ];
 
   home = {
@@ -85,7 +85,7 @@
 
     #file.".face.icon" = { source = ./profile_picture.png; };
 
-    stateVersion = "25.05;"
+    stateVersion = "25.05";
   };
 
   programs.home-manager.enable = true;
