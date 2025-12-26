@@ -12,27 +12,29 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  }
+  };
 
   outputs = inputs@{ nixpkgs, ... }: {
-    toasty = nixpkgs.lib.nixosSystem { 
-      modules = [
-        {
-          nixpkgs.overlays = [];
-          _module.args = {
-            inherit inputs;
-          };
-        } 
-        inputs.nixos-hardware.nixosModules.notyet
-        inputs.home-manager.nixosModules.home-manager
-        inputs.stylix.nixosModules.stylix
-        ./hosts/toasty/configuration.nix;
-      ];
+    nixosConfigurations = {
+      toasty = nixpkgs.lib.nixosSystem { 
+        modules = [
+          {
+            nixpkgs.overlays = [];
+            _module.args = {
+              inherit inputs;
+            };
+          } 
+          # inputs.nixos-hardware.nixosModules.notyet
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          ./hosts/toasty/configuration.nix
+        ];
+      };
     };
-  }
+  };
 }

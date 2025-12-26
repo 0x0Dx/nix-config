@@ -22,12 +22,12 @@
           pkgs.fetchurl {
             url = "https://raw.githubusercontent.com/0x0Dx/wallpapers/refs/heads/main/sakura_pixelart_light_animated.gif";
             sha256 = "sha256-qySDskjmFYt+ncslpbz0BfXiWm4hmFf5GPWF2NlTVB8=";
-          };
+          }
         else if "cat-watching-the-star_pixelart_purple_static.png" == config.stylix.image then
           pkgs.fetchurl {
             url = "https://raw.githubusercontent.com/0x0Dx/wallpapers/refs/heads/main/cat-watching-the-star_pixelart_purple_animated.gif";
             sha256 = "sha256-qySDskjmFYt+ncslpbz0BfXiWm4hmFf5GPWF2NlTVB8=";
-          };
+          }
         else "${toString config.stylix.image}";
     };
   };
