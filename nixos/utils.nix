@@ -1,5 +1,4 @@
 { pkgs, config, ... }: let 
-  username = config.var.username;
   hostname = config.var.hostname;
   keyboardLayout = config.var.keyboardLayout;
   configDir = config.var.configDir;
@@ -51,7 +50,6 @@ in {
 
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_DATA_DIRS = "/usr/share:/usr/local/share:/run/current-system/sw/share:/home/${username}/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "nvim";
     TERMINAL = "kitty";
@@ -62,7 +60,6 @@ in {
   services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
-    flatpak.enable = true;
     dbus = {
       enable = true;
       implementation = "broker";

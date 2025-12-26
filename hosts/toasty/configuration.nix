@@ -13,6 +13,7 @@
     ../../nixos/tailscale.nix
     ../../nixos/hyprland.nix
     ../../nixos/docker.nix
+    ../../nixos/flatpak.nix
 
     ./hardware-configuration.nix
     ./variables.nix
