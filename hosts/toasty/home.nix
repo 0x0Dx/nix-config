@@ -50,7 +50,6 @@
       protonvpn-gui
       proton-pass
       proton-authenticator
-      ticktick # Privacy friendly todo app
 
       # Dev
       go
@@ -72,6 +71,7 @@
       pfetch
       btop
       fastfetch
+      flatpak
 
       # Just cool
       peaclock

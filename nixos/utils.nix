@@ -95,7 +95,6 @@ in {
     vim
     go
     comma
-    flatpak
   ];
 
   xdg.portal = {
