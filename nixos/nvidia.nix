@@ -33,10 +33,6 @@ in {
     nvidia = {
       open = false;
       nvidiaSettings = true;
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
       modesetting.enable = true;
       package = nvidiaDriverChannel;
       forceFullCompositionPipeline = true;
