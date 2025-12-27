@@ -14,6 +14,7 @@
     ../../nixos/hyprland.nix
     ../../nixos/docker.nix
     ../../nixos/flatpak.nix
+    ../../nixos/gaming.nix
 
     ./hardware-configuration.nix
     ./variables.nix
