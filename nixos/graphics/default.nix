@@ -1,5 +1,5 @@
 {
   imports = [
-    ./systemd-boot.nix
+    ./nvidia.nix
   ];
 }
