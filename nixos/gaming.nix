@@ -33,12 +33,12 @@
     vkd3d-proton
     dxvk-nvapi
     jdk17
+    ds4drv
   ];
 
   hardware.steam-hardware.enable = true;
   services.joycond.enable = true;
   hardware.xone.enable = true;
-  hardware.dualsense.enable = true;
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
