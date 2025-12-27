@@ -18,7 +18,7 @@
     goverlay
     vkbasalt
     wine
-    proton-ge-bin
+    protonup-qt
     protonup-ng
     winetricks
     protontricks
