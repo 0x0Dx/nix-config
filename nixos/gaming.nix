@@ -13,12 +13,11 @@
     wineWowPackages = "wine-ge";
   };
 
-  programs.mangohud.enable = true;
-
   environment.systemPackages = with pkgs; [
     heroic
     bottles
     lutris
+    mangohud
     prismlauncher
     gamescope
     goverlay
