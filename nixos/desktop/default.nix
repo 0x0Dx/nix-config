@@ -1,5 +1,8 @@
 {
   imports = [
-    ./nvidia.nix
+    ./audio.nix
+    ./fonts.nix
+    ./hyprland.nix
+    ./sddm.nix
   ];
 }
