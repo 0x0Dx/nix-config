@@ -8,11 +8,6 @@
 
   programs.gamemode.enable = true;
 
-  programs.wine = {
-    enable = true;
-    wineWowPackages = "wine-ge";
-  };
-
   environment.systemPackages = with pkgs; [
     heroic
     bottles
@@ -22,6 +17,7 @@
     gamescope
     goverlay
     vkbasalt
+    wine
     proton-ge-bin
     protonup
     winetricks
