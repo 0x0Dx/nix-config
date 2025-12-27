@@ -25,7 +25,6 @@
     dxvk
     vkd3d
     vkd3d-proton
-    dxvk-nvapi
     jdk17
     ds4drv
   ];
