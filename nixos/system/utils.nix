@@ -31,7 +31,7 @@ in {
     LC_NUMERIC = extraLocale;
     LC_PAPER = extraLocale;
     LC_TELEPHONE = extraLocale;
-    LC_TIME = extraLocale;
+    LC_TIME = defaultLocale;
   };
 
   services = {
