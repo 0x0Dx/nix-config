@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ../../nixos/audio
     ../../nixos/boot
     ../../nixos/desktop
     ../../nixos/graphics
