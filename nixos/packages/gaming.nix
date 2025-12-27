@@ -34,7 +34,6 @@
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    LD_PRELOAD = "\${pkgs.gamemode.lib}/lib/libgamemodeauto.so";
     DXVK_ASYNC = "1";
     WINE_FULLSCREEN_FSR = "1";
     WINE_FULLSCREEN_FSR_STRENGTH = "2";
