@@ -19,7 +19,7 @@
     vkbasalt
     wine
     proton-ge-bin
-    protonup
+    protonup-ng
     winetricks
     protontricks
     dxvk
