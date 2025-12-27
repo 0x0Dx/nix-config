@@ -26,7 +26,6 @@
     vkd3d
     vkd3d-proton
     jdk17
-    ds4drv
   ];
 
   hardware.steam-hardware.enable = true;
