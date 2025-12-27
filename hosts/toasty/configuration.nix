@@ -1,20 +1,11 @@
 { config, ... }: {
   imports = [
-    ../../nixos/nvidia.nix
-    ../../nixos/audio.nix
-    ../../nixos/bluetooth.nix
-    ../../nixos/fonts.nix
-    ../../nixos/home-manager.nix
-    ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
-    ../../nixos/sddm.nix
-    ../../nixos/users.nix
-    ../../nixos/utils.nix
-    ../../nixos/tailscale.nix
-    ../../nixos/hyprland.nix
-    ../../nixos/docker.nix
-    ../../nixos/flatpak.nix
-    ../../nixos/gaming.nix
+    ../../nixos/boot
+    ../../nixos/desktop
+    ../../nixos/graphics
+    ../../nixos/networking
+    ../../nixos/packages
+    ../../nixos/system
 
     ./hardware-configuration.nix
     ./variables.nix
