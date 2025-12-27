@@ -8,8 +8,6 @@
 
   programs.gamemode.enable = true;
 
-  programs.lutris.enable = true;
-
   programs.wine = {
     enable = true;
     wineWowPackages = "wine-ge";
@@ -20,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     heroic
     bottles
+    lutris
     prismlauncher
     gamescope
     goverlay
